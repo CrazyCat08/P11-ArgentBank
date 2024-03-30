@@ -1,5 +1,3 @@
-// import PropTypes from "prop-types";
-
 function AccountCard({ title, amount, description }) {
     return (
         <section className="account">
@@ -16,11 +14,5 @@ function AccountCard({ title, amount, description }) {
         </section>
     );
 }
-
-// AccountCard.propTypes = {
-//     title: PropTypes.string.isRequired,
-//     amount: PropTypes.number.isRequired,
-//     description: PropTypes.string.isRequired,
-// };
 
 export default AccountCard;

@@ -1,3 +1,4 @@
+import React from "react";
 import AccountCard from "../AccountCard";
 
 import accountsData from "../../data/accounts-summary-data.json";

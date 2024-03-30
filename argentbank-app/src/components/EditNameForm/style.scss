@@ -1,0 +1,39 @@
+.edit-form-content {
+    max-width: 350px;
+    margin: 0px auto;
+    padding: 10px;
+}
+
+.edit-form-content h1 {
+    font-weight: normal;
+}
+
+.edit-form-inputs {
+    margin: 15px;
+}
+
+.edit-form-input label {
+    font-size: 1.1rem;
+}
+
+.edit-form-input {
+    margin: 20px 0;
+}
+
+.edit-form-input input {
+    border-radius: 4px;
+    padding: 2px 5px;
+    font-size: 1rem;
+}
+
+.edit-form-buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+input:disabled {
+    background-color: #ccc;
+}
