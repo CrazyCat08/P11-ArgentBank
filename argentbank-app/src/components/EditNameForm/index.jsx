@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { fetchUserData } from "../../redux/slices/userSlice";
 import { userNameUpdate } from "../../redux/slices/userSlice";
 import Button from "../Button";
 import "./style.scss";
@@ -20,10 +19,9 @@ const EditNameForm = ({ onClickToggleCancel, onClickToggleSave }) => {
         setUserName(currentUserName);
     }, [currentUserName]);
 
-    const SaveUserName = (e) => {
-        e.preventDefault();
+    const SaveUserName = (event) => {
+        event.preventDefault();
         dispatch(userNameUpdate({ token, userName }));
-        dispatch(fetchUserData({ token }));
     };
 
     return (
@@ -59,10 +57,10 @@ const EditNameForm = ({ onClickToggleCancel, onClickToggleSave }) => {
                 </div>
             </div>
             <div className="edit-form-buttons">
-                <div className="test" onClick={SaveUserName}>
+                <div onClick={SaveUserName}>
                     <Button onClick={onClickToggleSave}>Save</Button>
                 </div>
-                <div className="test">
+                <div>
                     <Button onClick={onClickToggleCancel}>Cancel</Button>
                 </div>
             </div>

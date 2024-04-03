@@ -37,9 +37,7 @@ export const authSlice = createSlice({
     initialState: {
         status: "void",
         isConnected: false,
-        token: localStorage.getItem("token")
-            ? JSON.parse(localStorage.getItem("token"))
-            : null,
+        token: null,
         error: null,
     },
 
@@ -61,7 +59,7 @@ export const authSlice = createSlice({
             .addCase(login.fulfilled, (state, action) => {
                 state.status = "fulfilled";
                 state.isConnected = true;
-                state.token = JSON.parse(localStorage.getItem("token"));
+                state.token = action.payload.body.token;
                 state.error = null;
             })
             .addCase(login.rejected, (state, action) => {

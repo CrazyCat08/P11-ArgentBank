@@ -20,21 +20,11 @@ function LoginForm() {
 
     const errorMessage = emptyFormError || error;
 
-    useEffect(() => {
-        if (error) {
-            setEmptyFormError("");
-        }
-        if (isConnected && token) {
-            navigate("/dashboard");
-        }
-    }, [error, dispatch, isConnected, token, navigate]);
-
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         if (email !== "" && password !== "") {
             dispatch(login({ email, password }));
-            console.log("User data: ", email, password);
             return;
         }
         setEmptyFormError("Veullez remplir tous les champs");
@@ -43,6 +33,15 @@ function LoginForm() {
     const toggleChecked = () => {
         setChecked((state) => !state);
     };
+
+    useEffect(() => {
+        if (error) {
+            setEmptyFormError("");
+        }
+        if (isConnected && token) {
+            navigate("/dashboard");
+        }
+    }, [error, isConnected, token, navigate]);
 
     return (
         <section className="sign-in-content">
